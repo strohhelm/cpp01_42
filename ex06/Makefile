@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/20 11:17:50 by pstrohal          #+#    #+#              #
-#    Updated: 2024/11/20 12:24:02 by pstrohal         ###   ########.fr        #
+#    Created: 2024/11/20 11:17:57 by pstrohal          #+#    #+#              #
+#    Updated: 2024/11/20 11:51:50 by pstrohal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harl
+NAME = harlFilter
 
 CC = c++
 
@@ -34,7 +34,7 @@ OBJ =	$(addprefix $(OBJ_DIR)/, $(FILES:%.cpp=%.o))
 
 DEP:= $(OBJ:.o=.d)
 DEPFLAGS = -MMD -MP
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 INCLUDES = -I$(INC_DIR)
 
 all: $(NAME)
@@ -42,7 +42,7 @@ all: $(NAME)
 
 
 $(NAME):$(OBJ)
-	@$(CC) $^ -o $@
+	@$(CC) $^ -o $@ -g
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
