@@ -19,24 +19,23 @@ FILES =	main.cpp\
 		randomChump.cpp\
 		Zombie.cpp
 
-SRC = $(addprefix $(SRC_DIR)/, $(FILES:%.cpp=%.cpp))
+SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ =	$(addprefix $(OBJ_DIR)/, $(FILES:%.cpp=%.o))
 
 DEP:= $(OBJ:.o=.d)
 DEPFLAGS = -MMD -MP
-FLAGS = -Wall -Wextra -Werror  -std=c++98
+FLAGS = -Wall -Wextra -Werror
 INCLUDES = -I$(INC_DIR)
 
--include $(DEP)
 all: $(NAME)
-
+-include $(DEP)
 
 $(NAME):$(OBJ)
 	@$(CC) $^ -o $@
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
-	@$(CC) $(FLAGS) $(DEPFLAGS) $(INCLUDES) -c $< -o $@ 
+	@$(CC) $(FLAGS) $(DEPFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)

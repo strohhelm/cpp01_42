@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 11:38:38 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/11/18 12:14:00 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/11/20 12:41:45 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ int main(void)
 	robert = newZombie("Robert");
 	robert->announce();
 	randomChump("Frank");
-	
 	delete robert;
 }
