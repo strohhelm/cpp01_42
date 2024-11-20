@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:36:29 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/11/19 14:42:09 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/11/20 14:52:51 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void HumanB::attack(void){
 	return ;
 }
 
-void	HumanB::setWeapon(Weapon& w)
+void	HumanB::setWeapon(Weapon &w)
 {
 	this->weapon = &w; 
 }

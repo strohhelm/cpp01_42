@@ -6,7 +6,7 @@
 /*   By: pstrohal <pstrohal@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:48:58 by pstrohal          #+#    #+#             */
-/*   Updated: 2024/11/19 19:46:40 by pstrohal         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:44:40 by pstrohal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@
 int main(int argc, char **argv)
 {
 	if (argc != 4){
-		std::cout	<<"wrong amount of arguments!! pattern:"
-					<<"<filemane> <string to be replaced> <string to replace with> ";
+		std::cout	<<R<<"Wrong amount of arguments!! pattern:\t"
+					<<G<<"<filename>  "
+					<<Y" <string to be replaced>  "
+					<<M" <string to replace with>"
+					<<X<<std::endl;
 		return 1;
 	}
 
@@ -28,16 +31,23 @@ int main(int argc, char **argv)
 	std::string		buff;
 	int				len;
 	size_t			i = 0;
-	
+
+	for (int i = 0; i < 4; i++){
+		if (!*(argv[i])){
+			std::cout<<R<<"How can i work with nothing as an input?"<<X<<std::endl;
+			return 1;
+		}
+	}
+
 	inFile.open(argv[1], std::ios::in);
 	if (!inFile){
-		std::cout<<"there is no such file or the permissions are not set correctly!"<<std::endl;
+		std::cout<<R<<"there is no such file or the permissions are not set correctly!"<<X<<std::endl;
 		return 1;
 	}
 	
 	std::ofstream	outFile(outname, std::ios::trunc);
 	if (!outFile){
-		std::cout<<"Oh something happened with the outputstream!"<<std::endl;
+		std::cout<<R<<"Oh something happened with the outputstream!"<<X<<std::endl;
 		return 1;
 	}
 	
